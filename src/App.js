@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import React,{useState} from 'react';
 import './App.css';
+// import BarChart from './Charts/BarChart'
+// import PieChart from './Charts/PieChart';
+import LineChart from './Charts/LineChart';
 
 function App() {
+  const [show, setShow]=useState(true)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+      <img src="https://i.ibb.co/Yy6Xqtw/1.jpg" alt="CompanyLogo"/>
+      {
+      show?<LineChart className="chart"/>:null
+      }
+      <button onClick = {()=>setShow(!show)}>Toggle</button>
     </div>
   );
 }
